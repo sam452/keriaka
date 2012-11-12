@@ -12,15 +12,29 @@
 </head>
 <body>
     <header>
-    <ul>
-      <%- if user_signed_in? %>
-        <li><%= link_to "Write Post", new_price_path %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <%- else %>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <%- end %>
-    </ul>
+    
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Keriaka</a>
+            <ul class="nav">
+              <%- if user_signed_in? %>
+                <li><%= link_to "New Report", new_price_path %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                  <%- else %>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li><%= link_to "Sign In", new_user_session_path %></li>
+              <%- end %>
+            </ul>
+        </div>
+      </div>
+    </div>
+
   </header>
 <section id="main">
     <%- flash.each do |message| %>

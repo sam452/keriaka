@@ -8,6 +8,9 @@ Feature: Marketer can post price
   * Report must have date and time recorded
   * Report must have buyer recorded
   
+  Background:
+    Given I am signed in
+  
   Scenario: Happy Path
     Given I am on the homepage
     And I click "New Report"
