@@ -1,0 +1,20 @@
+<%= link_to("New Report", new_price_path) %>
+
+<h4>Price: </h4><%= @price.price %>
+<h4>Quality: </h4><%= @price.quality %>
+<h4>Buyer: </h4><%= @price.buyer %>
+<h4>Date: </h4><%= @price.try(:date).try(:strftime,'%m/%d/%Y') %>
+
+  <table>
+<% @prices.each do |p| %>
+  <tr>
+    <td><%= p.price %></td>
+    <td><%= p.quality %></td>
+    <td><%= p.buyer %></td>
+    <%= p.date.try(:strftime,'%m/%d/%Y') %>
+    <td><%= link_to 'Show', horse %></td>
+    <td><%= link_to 'Edit', edit_horse_path(horse) %></td>
+    <td><%= link_to 'Destroy', horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+  </table>

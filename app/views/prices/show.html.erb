@@ -1,0 +1,4 @@
+<h4>Price: </h4><%= @price.price %>
+<h4>Quality: </h4><%= @price.quality %>
+<h4>Buyer: </h4><%= @price.buyer %>
+<h4>Date: </h4><%= @price.try(:date).try(:strftime,'%m/%d/%Y') %>

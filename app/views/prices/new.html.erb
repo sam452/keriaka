@@ -1,0 +1,12 @@
+<h3>Enter the price and quality for today's market</h3>
+
+<%= form_for @price do |f| %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :quality %>
+  <%= f.text_field :quality %>
+  <%= f.label :buyer %>
+  <%= f.text_field :buyer %>
+  <%= f.hidden_field :date, :value => Time.now %>
+  <%= f.submit %>
+<%- end %>
