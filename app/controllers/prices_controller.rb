@@ -20,6 +20,10 @@ class PricesController < ApplicationController
   def show
     
   end
+  
+  def index
+    @prices = Price.most_recent
+  end
 
   protected
 

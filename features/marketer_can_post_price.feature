@@ -21,4 +21,3 @@ Feature: Marketer can post price
     And I should see "Good"
     And I should see "Joe"
     And I should see the current date
- 
