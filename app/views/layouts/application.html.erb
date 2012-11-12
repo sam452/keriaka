@@ -11,9 +11,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section id="main">
+    <header>
+    <ul>
+      <%- if user_signed_in? %>
+        <li><%= link_to "Write Post", new_price_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <%- else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <%- end %>
+    </ul>
+  </header>
+<section id="main">
     <%- flash.each do |message| %>
       <p><%= message %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%- end %>
     <%= yield %>
   </section>

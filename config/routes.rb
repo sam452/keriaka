@@ -1,5 +1,7 @@
 Keriaka::Application.routes.draw do
   
+  devise_for :users
+
   resources :prices
   
   root :to => 'prices#index'
