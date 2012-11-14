@@ -3,14 +3,15 @@ class PricesController < ApplicationController
   before_filter :lookup_price
   
   def new
-    @price = Price.new
+    @commodity = Commodity.find(params[:commodity_id])
+    @price = Price.new(params[:commodity])
   end
   
   def create
     @price = Price.new(params[:price])
     if @price.save
       flash[:notice] = "Your report has been accepted."
-      redirect_to @price
+      redirect_to @commodity_price
     else
       flash[:error] = "Your report couldn't be posted. #{@price.errors.full_messages.join}"
       render :new
@@ -22,7 +23,10 @@ class PricesController < ApplicationController
   end
   
   def index
-    @prices = Price.most_recent
+    @commodity = Commodity.find(params[:commodity_id])
+    commodity = Commodity.find(params[:commodity_id])
+    @prices = commodity.prices
+    
   end
 
   protected
