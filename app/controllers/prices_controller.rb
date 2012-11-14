@@ -11,7 +11,7 @@ class PricesController < ApplicationController
     @price = Price.new(params[:price])
     if @price.save
       flash[:notice] = "Your report has been accepted."
-      redirect_to @commodity_price
+      redirect_to @price
     else
       flash[:error] = "Your report couldn't be posted. #{@price.errors.full_messages.join}"
       render :new
