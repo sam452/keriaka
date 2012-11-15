@@ -2,9 +2,11 @@ Keriaka::Application.routes.draw do
   
   devise_for :users
 
-  resources :prices
+  resources :commodities, only: [:new, :show, :create] do
+    resources :prices
+  end
   
-  root :to => 'prices#index'
+  root :to => 'commodities#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,6 @@
-<h3>Enter the price and quality for today's market</h3>
+<h3>Enter the price and quality for <%= @commodity.name %> in today's market</h3>
 
-<%= form_for @price do |f| %>
+<%= form_for [@commodity, @price] do |f| %>
   <%= f.label :price %>
   <%= f.text_field :price %>
   <%= f.label :quality %>
@@ -8,5 +8,7 @@
   <%= f.label :buyer %>
   <%= f.text_field :buyer %>
   <%= f.hidden_field :date, :value => Time.now %>
+  <%= f.hidden_field :commodity_id, :value => @commodity.id %>
   <%= f.submit %>
 <%- end %>
+

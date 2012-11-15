@@ -1,0 +1,10 @@
+  <table>
+<% @commodities.each do |c| %>
+  <tr>
+    <td><h3>Latest prices for <%= link_to(c.name, commodity_prices_path(c.id)) %></h3></td>
+    <td>Description: <%= c.description %></td>
+  </tr>
+<% end %>
+  </table>
+  
+commodity_prices GET    /commodities/:commodity_id/prices(.:format)          prices#index
