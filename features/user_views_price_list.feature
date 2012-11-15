@@ -2,8 +2,22 @@ Feature: User view post list
   As a farmer, I want to see the most recent prices for maize.
 
   Scenario:
-    Given 6 prices    
+    Given the following Commodity:
+      | name  | maize |
+      | description | yellow |
+      
+    And that commodity has the following prices:
+      | price | quality | buyer |
+      | 10    | good    | Joe   |
+      | 11    | good    | Joe   |
+      | 12    | good    | Joe   |
+      | 13    | good    | Joe   |
+      | 14    | good    | Joe   |
+      | 15    | good    | Joe   |
+
     When I go to the homepage
+    And show me the page
+    And I click "maize"
     Then I should see "11"
     And I should see "good"
     And I should see "Joe"

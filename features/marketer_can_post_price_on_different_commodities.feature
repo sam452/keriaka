@@ -32,5 +32,3 @@ Feature: Marketer can post price on different commodities
     And I should see "Good"
     And I should see "Joe"
     And I should see the current date
-
-  Given /^the following ([^"]*):$/ do |model_name, table|
