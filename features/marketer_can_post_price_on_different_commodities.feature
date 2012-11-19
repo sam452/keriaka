@@ -1,4 +1,3 @@
-@wip
 Feature: Marketer can post price on different commodities
   As a marketer
   In order to empower the indigent farmers of Tanzania
@@ -24,7 +23,6 @@ Feature: Marketer can post price on different commodities
     And I fill in "10" for "Price"
     And I fill in "Good" for "Quality"
     And I fill in "Joe" for "Buyer"
-    And show me the page
     And I press "Create Price"
     Then I should see "Your report has been accepted."
     And I should see "Tobacco"

@@ -1,7 +1,7 @@
-Feature: User view post list
-  As a farmer, I want to see the most recent prices for maize.
+Feature: SMS User view most recent prices
+  As a farmer, I want to see the most recent prices for maize on my cell.
 
-  Background:
+  Scenario:
     Given the following Commodity:
       | name  | maize |
       | description | yellow |
@@ -15,13 +15,12 @@ Feature: User view post list
       | 14    | good    | Joe   |
       | 15    | good    | Joe   |
 
-   Scenario:    
-    When I go to the homepage
-    And I click "maize"
+    When I send "maize" on my cell phone
     Then I should see "11"
     And I should see "good"
     And I should see "Joe"
     And I should see the current date
+    And show me the page
     And I should see "12"
     And I should see "good"
     And I should see "Joe"

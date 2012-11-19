@@ -1,3 +1,4 @@
+@wip
 Feature: User authentication
 
   Scenario: Signed out users see appropriate links
@@ -16,6 +17,7 @@ Feature: User authentication
   Scenario: Signing up
     Given I am on the homepage
     When I click "Sign Up"
+    And show me the page
     And I fill in "bob@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
