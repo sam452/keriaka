@@ -1,11 +1,12 @@
-  Latest prices for <%= @commodity.name %>
+  <h3>Latest prices for <%= @commodity.name %></h3>
   <table>
-<% @prices.each do |p| %>
+  <tr><th>Price</th><th>Quality</th><th>Buyer</th><th>Date</th></tr>
+<% @prices.each do |post| %>
   <tr>
-    <td>Price: <%= p.price %></td>
-    <td>Quality: <%= p.quality %></td>
-    <td>Buyer: <%= p.buyer %></td>
-    <td>Date: <%= p.date.try(:strftime,'%m/%d/%Y') %></td>
+    <td><%= post.price %></td>
+    <td><%= post.quality %></td>
+    <td><%= post.buyer %></td>
+    <td><%= post.date.try(:strftime,'%m/%d/%Y') %></td>
   </tr>
 <% end %>
   </table>
