@@ -5,12 +5,11 @@ class ResponsesController < ApplicationController
   
   
   def show
-    my_commodity = "corn" #params[:Body] #  #
+    my_commodity = params[:Body] # "corn" #
    # commodity = Commodity.find_by_name(my_commodity)
-    @commodity = Commodity.find_by_name(my_commodity)
-    @prices = @commodity.prices.most_recent
-    
-    if @prices
+    if Commodity.find_by_name(my_commodity)
+      @commodity = Commodity.find_by_name(my_commodity)
+      @prices = @commodity.prices.most_recent
       @prices_text =  "Price|Quality|Buyer|Date|"
       @prices.each do |p|
         @prices_text << p.price.to_s
@@ -22,7 +21,10 @@ class ResponsesController < ApplicationController
         @prices_text << p.date.try(:strftime,'%m/%d')
         @prices_text << '| '
       end
-    end
+      else
+        @prices_text = "No prices found for #{my_commodity}"
+    end 
+    
     render 'process_sms.xml.erb', :content_type => 'text/xml'
     
   end
