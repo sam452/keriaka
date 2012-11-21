@@ -6,6 +6,9 @@ Keriaka::Application.routes.draw do
     resources :prices
   end
   
+  resources :responses, only: [:show]
+  
+  #match 'responses#show' => 'commodities/:id/prices', :as => :purchase
   root :to => 'commodities#index'
   
   # The priority is based upon order of creation:

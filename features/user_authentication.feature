@@ -1,4 +1,3 @@
-@wip
 Feature: User authentication
 
   Scenario: Signed out users see appropriate links

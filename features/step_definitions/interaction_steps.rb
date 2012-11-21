@@ -31,3 +31,7 @@ end
 Then /^I should see the current date$/ do
   page.should have_content(Time.now.try(:strftime,'%m/%d/%Y'))
 end
+
+When /^I send "(.*?)" on my cell phone$/ do |commodity|
+  pending # express the regexp above with the code you wish you had
+end

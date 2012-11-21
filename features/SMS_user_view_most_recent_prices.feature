@@ -16,25 +16,25 @@ Feature: SMS User view most recent prices
       | 15    | good    | Joe   |
 
     When I send "maize" on my cell phone
-    Then I should see "11"
-    And I should see "good"
-    And I should see "Joe"
-    And I should see the current date
-    And show me the page
-    And I should see "12"
-    And I should see "good"
-    And I should see "Joe"
-    And I should see the current date
-    And I should see "13"
-    And I should see "good"
-    And I should see "Joe"
-    And I should see the current date
-    And I should see "14"
-    And I should see "good"
-    And I should see "Joe"
-    And I should see the current date
-    And I should see "15"
-    And I should see "good"
-    And I should see "Joe"
-    And I should see the current date
+    Then "+1615-495-7783" should receive a text message
+    Then I should see "11" in the text message body
+    And I should see "good" in the text message body
+    And I should see "Joe" in the text message body
+    And I should see the current date in the text message body
+    And I should see "12" in the text message body
+    And I should see "good" in the text message body
+    And I should see "Joe" in the text message body
+    And I should see the current date in the text message body
+    And I should see "13" in the text message body
+    And I should see "good" in the text message body
+    And I should see "Joe" in the text message body
+    And I should see the current date in the text message body
+    And I should see "14" in the text message body
+    And I should see "good" in the text message body
+    And I should see "Joe" in the text message body
+    And I should see the current date in the text message body
+    And I should see "15" in the text message body
+    And I should see "good" in the text message body
+    And I should see "Joe" in the text message body
+    And I should see the current date in the text message body
     And I should not see "10"

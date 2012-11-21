@@ -33,6 +33,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'forward'
 end
 
 group :test do
@@ -40,6 +41,9 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda'
+  gem 'rr'
+  gem 'sms-spec'
+  gem 'capybara', '1.1.3'
 end
 
 
