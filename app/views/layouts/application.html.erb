@@ -21,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Keriaka</a>
+          <%= link_to "Keriaka", root_path, html_options = {class: "brand"} %>
             <ul class="nav">
               <%- if user_signed_in? %>
                 <li><%= link_to "New Commodity", new_commodity_path %></li>
