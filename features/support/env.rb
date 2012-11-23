@@ -59,3 +59,5 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+require 'sms_spec'
+require 'sms_spec/cucumber'
