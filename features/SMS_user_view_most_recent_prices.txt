@@ -1,0 +1,25 @@
+Feature: SMS User view most recent prices
+  As a farmer, I want to see the most recent prices for maize on my cell.
+
+  Scenario:
+    Given the following Commodity:
+      | name  | maize |
+      | description | yellow |
+      
+    And that commodity has the following prices:
+      | price | quality | buyer |
+      | 10    | good    | Joe   |
+      | 11    | good    | Joe   |
+      | 12    | good    | Joe   |
+      | 13    | good    | Joe   |
+      | 14    | good    | Joe   |
+      | 15    | good    | Joe   |
+
+   Given I send a GET request for "/responses/show" with the following:
+    { "FromCity": "Nashville", "body": "corn" }
+    
+    Then the response should be "200"
+    And the response JSON should be:
+      """
+      [{ "FromCity": "Nashville", "body": "corn" }]
+      """

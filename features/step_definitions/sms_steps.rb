@@ -39,9 +39,9 @@ Then /^I should see the following in the text message body:$/ do |content|
   current_text_message.should have_body(content)
 end
 
-When /^I send "([^"]*)" on my cell phone$/ do |argument|
-  ruby /Users/sam/apps/twilio2/send_sms_test.rb argument
-end
+When /^I send "([^"]*)" on my cell phone$/ do |commodity|
+   get "/responses/show", {To: ENV['TWILIO_PHONE'], From: "+16154957783", Body: commodity}, { 'Content-Type' => 'application/json'}
+ end
 
 Then /^I should see the current date in the text message body$/ do
   current_text_message.should have_body(Time.now.try(:strftime,'%m/%d'))

@@ -37,4 +37,4 @@ Feature: SMS User view most recent prices
     And I should see "good" in the text message body
     And I should see "Joe" in the text message body
     And I should see the current date in the text message body
-    And I should not see "10"
+    And I should not see "10" in the text message body
