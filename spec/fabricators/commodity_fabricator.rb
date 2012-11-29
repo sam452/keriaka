@@ -1,4 +1,8 @@
+#Fabricator(:commodity) do
+#  name { sequence(:name) { |i| "commod-#{i}" } }
+#  description "description text here"
+#end
+
 Fabricator(:commodity) do
-  name { sequence(:name) { |i| "commod-#{i}" } }
-  description "description text here"
+  prices(count: 6) { |attrs, i| Fabricate(:commodity, price: "1#{i}") }
 end

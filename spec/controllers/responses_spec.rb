@@ -1,14 +1,15 @@
 require 'spec_helper'
 
-describe "responses" do
+describe "ResponsesController" do
   include SmsSpec::Helpers
   include SmsSpec::Matchers
   
   before do
     clear_messages
+    subject { Fabricate(:commodity) }
   end
   
-  describe "#show" do
+  describe "GET #show" do
     let(:commodity) {"corn"}
     
     it "receives a request" do
@@ -18,7 +19,7 @@ describe "responses" do
     end
     
     it "retrieves the commodity from the database" do
-     expect(Commodity.find_by_name(commodity)).prices.to eq "test"
+     expect(subject.prices).to eq "1"
     end
     
     it "does not find the wrong commodity" do
