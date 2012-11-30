@@ -30,3 +30,16 @@ Feature: Marketer can post price on different commodities
     And I should see "Good"
     And I should see "Joe"
     And I should see the current date
+@wip
+  Scenario: User cannot leave price blank
+    Given I am on the homepage
+    And I click "Tobacco"
+    Then I should see "Latest prices for Tobacco"
+    And I click "New Price Report"
+    Then I should see "Enter the price and quality for Tobacco in today's market"
+    And I fill in "" for "Price"
+    And I fill in "Good" for "Quality"
+    And I fill in "Joe" for "Buyer"
+    And I press "Create Price"
+    Then I should see "Your report has been rejected."
+    Then I should see "Enter the price and quality for Tobacco in today's market"
