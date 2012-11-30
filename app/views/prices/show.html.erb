@@ -3,3 +3,7 @@
 <h4>Quality: </h4><%= @price.quality %>
 <h4>Buyer: </h4><%= @price.buyer %>
 <h4>Date: </h4><%= @price.try(:date).try(:strftime,'%m/%d/%Y') %>
+<p>
+<%= link_to "New Price Report", new_commodity_price_path(@commodity) %>
+</p>
+<h3>Latest prices for <%= link_to(@commodity.name, commodity_prices_path(@commodity.id)) %></h3>
