@@ -12,7 +12,7 @@ FactoryGirl.define do
     after_create do |commodity|
       #1.upto(6) do
         FactoryGirl.create(:price, :commodity => commodity)
-        sleep 2
+      #  sleep 2
       #end
     end
   end

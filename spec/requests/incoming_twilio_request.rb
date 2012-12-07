@@ -18,7 +18,7 @@ describe "responses" do
   end
   
   it "responds with five prices" do
-    response.Body == "Corn"
+    sms[:Body] == "Corn"
   end
 
 end

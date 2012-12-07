@@ -16,7 +16,6 @@ Feature: User authentication
   Scenario: Signing up
     Given I am on the homepage
     When I click "Sign Up"
-    And show me the page
     And I fill in "bob@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
@@ -56,3 +55,14 @@ Feature: User authentication
     And I am on the homepage
     When I click "Sign Out"
     Then I should see "You are now signed out."
+
+  Scenario: Signing up fails on duplicate user
+    Given there is a user "bob@example.com" with password "notfoobar"
+    When I go to the homepage
+    When I click "Sign Up"
+    And I fill in "bob@example.com" for "Email"
+    And I fill in "foobar" for "Password"
+    And I fill in "foobar" for "Password confirmation"
+    And I click "Sign up"
+    Then I should see "Email has already been taken"
+

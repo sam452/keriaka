@@ -4,5 +4,7 @@
 #end
 
 Fabricator(:commodity) do
-  prices(count: 6) { |attrs, i| Fabricate(:commodity, price: i) }
+  #prices(count: 6) { |attrs, i| Fabricate(:commodity, price: i) }
+  name "maize"
+  description "white"
 end

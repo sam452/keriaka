@@ -6,6 +6,7 @@ Feature: User view post list
       | name  | maize |
       | description | yellow |
       
+      
     And that commodity has the following prices:
       | price | quality | buyer |
       | 10    | good    | Joe   |
@@ -17,7 +18,7 @@ Feature: User view post list
 
    Scenario:    
     When I go to the homepage
-    And I click "maize"
+    And I click "Maize"
     Then I should see "11"
     And I should see "good"
     And I should see "Joe"
@@ -39,3 +40,4 @@ Feature: User view post list
     And I should see "Joe"
     And I should see the current date
     And I should not see "10"
+    

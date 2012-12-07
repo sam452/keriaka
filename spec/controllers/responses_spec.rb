@@ -4,19 +4,6 @@ describe "ResponsesController" do
   include SmsSpec::Helpers
   include SmsSpec::Matchers
   
-  let(:commodity) { FactoryGirl.create(:commodity) do |commodity|
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-                       sleep 2
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-                       sleep 2
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-                       sleep 2
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-                       sleep 2
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-                       sleep 2
-                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
-  end }
   
   before do
     clear_messages
@@ -25,7 +12,7 @@ describe "ResponsesController" do
   describe "GET #show" do
     
     it "parses the commodity from the Body" do
-      commodity.name == "corns"
+     # commodity.find_by_name == "corn"
     end
     
     it "retrieves the commodity from the database" do
@@ -38,8 +25,6 @@ describe "ResponsesController" do
     it "returns the last five prices" do
     end
     
-    it "renders xml with the prices" do
-    end
   end
   
 end
