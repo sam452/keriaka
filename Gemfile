@@ -29,9 +29,10 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'fabrication'
+  gem 'factory_girl_rails', "~> 4.0"
   gem 'rspec-rails'
   gem 'forward'
+  gem 'fabrication'
 end
 
 group :test do

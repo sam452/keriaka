@@ -4,22 +4,32 @@ describe "ResponsesController" do
   include SmsSpec::Helpers
   include SmsSpec::Matchers
   
+  let(:commodity) { FactoryGirl.create(:commodity) do |commodity|
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+                       sleep 2
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+                       sleep 2
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+                       sleep 2
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+                       sleep 2
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+                       sleep 2
+                       commodity.prices << FactoryGirl.create(:price, commodity: commodity)
+  end }
+  
   before do
     clear_messages
-    subject { Fabricate(:commodity) }
   end
   
   describe "GET #show" do
-    let(:commodity) {"corn"}
-    
-    it "receives a request" do
-    end
     
     it "parses the commodity from the Body" do
+      commodity.name == "corns"
     end
     
     it "retrieves the commodity from the database" do
-     expect(subject.prices).to eq "1"
+     
     end
     
     it "does not find the wrong commodity" do

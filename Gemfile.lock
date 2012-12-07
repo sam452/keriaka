@@ -84,6 +84,11 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fabrication (2.5.0)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     fastercsv (1.5.5)
     ffi (1.1.5)
     forward (0.1.6)
@@ -234,6 +239,7 @@ DEPENDENCIES
   database_cleaner
   devise
   fabrication
+  factory_girl_rails (~> 4.0)
   forward
   jquery-rails
   launchy

@@ -61,3 +61,5 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 require 'sms_spec'
 require 'sms_spec/cucumber'
+#require 'factory_girl_rails'
+#FactoryGirl.find_definitions

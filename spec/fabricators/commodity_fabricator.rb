@@ -4,5 +4,5 @@
 #end
 
 Fabricator(:commodity) do
-  prices(count: 6) { |attrs, i| Fabricate(:commodity, price: "1#{i}") }
+  prices(count: 6) { |attrs, i| Fabricate(:commodity, price: i) }
 end
