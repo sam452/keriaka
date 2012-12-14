@@ -42,4 +42,15 @@ Feature: Marketer can create a commodity
     Then I should see "Your report couldn't be posted"
     And I should see "Name can't be blank"
     And I should see "Enter the commodity that can be sold"
-    
+
+  Scenario: Name for commodity cannot be more than one word
+    Given I am on the homepage
+    And I click "New Commodity"
+    Then I should see "Enter the commodity that can be sold"
+    When I fill in "my commodity" for "Name"
+    And I fill in "Smokey" for "Description"
+    And I press "Create Commodity"
+    Then I should see "Your report couldn't be posted"
+    And I should see "Name must be a single word"
+    And I should see "Enter the commodity that can be sold"
+        
