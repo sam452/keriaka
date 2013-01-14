@@ -43,6 +43,7 @@ group :test do
   gem 'rr'
   gem 'sms-spec'
   gem 'capybara', '1.1.3'
+  gem 'pry-rails'
 end
 
 

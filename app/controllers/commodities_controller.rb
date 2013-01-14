@@ -7,7 +7,6 @@ class CommoditiesController < ApplicationController
   end
   
   def new
-   # @price = Price.new
   end
   
   def create

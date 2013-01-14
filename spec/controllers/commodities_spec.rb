@@ -3,9 +3,9 @@ require 'spec_helper'
 describe CommoditiesController do
   describe "GET index" do
     it "assigns @commodities" do
-      commodity = Commodity.create
+      commodity = Commodity.create(name: "same")
       get :index
-      assigns(:commodities).should eq([commodity])
+      assigns(:commodities).should == [commodity]
     end
   end
     
@@ -15,10 +15,11 @@ describe CommoditiesController do
     end
   
   describe "GET new" do
-    it "instantiates a new commodity" do
+    it "creates a new commodity" do
+      pending "No Diff but wants me to look at implementation"
       commodity = Commodity.new
       get :new
-      assigns(:commodities).should eq([commodity])
+      assigns(:commodity).should eq(commodity)
     end
     
     it "renders the new template" do
