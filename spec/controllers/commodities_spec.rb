@@ -16,10 +16,8 @@ describe CommoditiesController do
   
   describe "GET new" do
     it "creates a new commodity" do
-      pending "No Diff but wants me to look at implementation"
-      commodity = Commodity.new
       get :new
-      assigns(:commodity).should eq(commodity)
+      assigns(:commodity).should be_a_new(Commodity)
     end
     
     it "renders the new template" do
