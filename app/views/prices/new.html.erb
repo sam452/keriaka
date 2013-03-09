@@ -1,4 +1,6 @@
-<h3>Enter the price and quality for <%= @commodity.name %> in today's market</h3>
+ <div class="clearfix">
+ <div class"span12">
+  <h3>Enter the price and quality for <%= @commodity.name %> in today's market</h3>
 
 <%= form_for [@commodity, @price] do |f| %>
   <%= f.label :price %>
@@ -12,3 +14,5 @@
   <%= f.submit %>
 <%- end %>
 
+</div>
+</div>

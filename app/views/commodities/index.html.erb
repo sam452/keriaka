@@ -1,8 +1,28 @@
-  <table>
-<% @commodities.each do |c| %>
-  <tr>
-    <td><h3>Latest prices for <%= link_to(c.name, commodity_prices_path(c.id)) %></h3></td>
-  </tr>
-<% end %>
-  </table>
-  
+      <div class="span4">
+        <!----- <div class="border-right"> --->
+  <h1 class="indent-1">Commodities</h1>
+          <h2 class="p2">Latest prices for:</h2>
+          <ul class="commodity-list p2">
+            <% @commodities.each do |commodity| %>
+            <li><h3><%= link_to(commodity.name, commodity_prices_path(commodity.id)) %></h3></li>
+            <% end %>
+          </ul>
+          <%- if user_signed_in? %>
+                    <%= link_to "New Commodity", new_commodity_path, class: "btn btn-small btn-warning" %>
+          <%- end %>
+     <!-----</div>  --->
+     </div>
+          
+    <div class="span8">
+
+          <ul class="fiddle">
+            <li>
+              <%= image_tag("togo-market.jpg") %>
+            </li>
+            <li>
+              <%= image_tag("slide2.png") %>
+            </li>
+          </ul>
+
+        </div>
+     

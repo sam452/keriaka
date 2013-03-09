@@ -9,41 +9,93 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="header-block clearfix">
     <header>
-    
-        <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <%= link_to "Keriaka", root_path, html_options = {class: "brand"} %>
-            <ul class="nav">
-              <%- if user_signed_in? %>
-                <li><%= link_to "New Commodity", new_commodity_path %></li>
-                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-                  <%- else %>
-                <li><%= link_to "Sign Up", new_user_registration_path %></li>
-                <li><%= link_to "Sign In", new_user_session_path %></li>
-              <%- end %>
-            </ul>
+    <div class="container">
+      <div class="row">
+        <div class="span12 clearfix">
+          <div class="navbar navbar_ clearfix">
+            <div class="navbar-inner">
+              <div class="container">
+                <%= link_to image_tag("keriaka-logo.png") , root_path, html_options = {class: "brand"} %></h1>
+                <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);"></select>
+                <div id = "main-nav-menu" class="nav-collapse nav-collapse_ collapse">
+                  
+                  <ul class="nav sf-menu">
+              		<%- if user_signed_in? %>
+                    <li><%= link_to "New Commodity", new_commodity_path %></li>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                       <%- else %>
+                   <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                   <li><%= link_to "Sign In", new_user_session_path %></li>
+                  <%- end %>
+                 </ul>
+                 
+                 </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </header>
-<section id="main">
-    <%- flash.each do |message| %>
-      <p><%= message %></p>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%- end %>
-    <%= yield %>
-  </section>
+
+</div>
+
+<!-- container -->
+
+<section id="content">
+
+  <div class="container">
+                     <%- flash.each do |type, message| %>
+                    <%= content_tag(:p, message, :class => type) %>
+              <%- end %>
+      <!-- welcome -->
+      <%= yield %>
+      </div><!-- container content -->
+
+      <!-- meet our team -->
+    </div>
+</section>
+    <!-- client logo -->
+
+  </div>
+<!--==============================footer=================================-->
+<footer>
+  <div class="section-3">
+    <div class="container">
+      <div class="row">
+        <!-- about us -->
+        <div class="span6">
+          <h2>About Us</h2>
+          <div class="clearfix p1">
+            <p class="text-info"><i>The Keriaka Marketplace Corporation operates the largest public marketplace in the capital city.</i></p>
+            The Corporation is governed by a board composed of Producers, Sellers and officials from the department of Agriculture of Tanzania. </div>
+        </div>
+        <!-- links -->
+        <div class="span6">
+          <h2>Useful Links</h2>
+          <ul class="list">
+            <li><a href="http://www.tanzania.go.tz/government/contacts.htm">Government Contacts</a></li>
+            <li><a href="http://tanzagriculture.webs.com">Tanzania Agriculture Support Organization</a></li>
+            <li><a href="http://www.solar-aid.org">Solar Aid Tanzania</a></li>
+            <li><a href="http://www.britishcouncil.org/africa-tz-contact-us.htm">British Council</a></li>
+            <li><a href="http://countryoffice.unfpa.org/tanzania/2009/09/10/1292/overview/">UNFPA Tanzania</a></li>
+            <li><a href="http://www.windsofafrica.org">Winds of Africa</a></li>
+            <li><a href="http://tanzania.wateraid.org">Water Aid - Tanzania</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 </body>
 </html>
