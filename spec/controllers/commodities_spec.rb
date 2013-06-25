@@ -2,8 +2,11 @@ require 'spec_helper'
 
 describe CommoditiesController do
   describe "GET index" do
-    it "assigns @commodities" do
-      commodity = Commodity.create(name: "same")
+    # before(:each) do
+    # Factory(:commodity)
+  #end
+  it "assigns @commodities" do
+      commodity = FactoryGirl.create(:commodity) #Commodity.create(name: "same")
       get :index
       assigns(:commodities).should == [commodity]
     end

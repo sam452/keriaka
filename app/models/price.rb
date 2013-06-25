@@ -5,4 +5,8 @@ class Price < ActiveRecord::Base
   belongs_to :commodity
   
   validates :price, presence: true
+
+  def as_json(options)
+  	{price: price, quality: quality, date: date}
+  end
 end

@@ -53,4 +53,10 @@ Feature: Marketer can create a commodity
     Then I should see "Your report couldn't be posted"
     And I should see "Name must be a single word"
     And I should see "Enter the commodity that can be sold"
+
+  Background:
+    I am not signed in
+
+  Scenario: Unauthorized user cannot create commodity
+    Given I do not exist as a user    
         

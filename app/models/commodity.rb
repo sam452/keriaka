@@ -3,6 +3,7 @@ require_relative 'commodity_name_validator'
 class Commodity < ActiveRecord::Base
   attr_accessible :description, :name
   has_many :prices
+  accepts_nested_attributes_for :prices
   
   before_save { |commodity| commodity.name.capitalize! }
   

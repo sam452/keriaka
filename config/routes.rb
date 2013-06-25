@@ -5,6 +5,12 @@ Keriaka::Application.routes.draw do
   resources :commodities, only: [:new, :show, :create] do
     resources :prices
   end
+
+  namespace :api, defaults: {format: 'json'} do
+    resources :commodities, only: [:show, :new, :create] do
+      resources :prices
+    end
+  end
   
   #resources :responses, only: [:show]
   match '/incoming_twilio' => 'incoming_twilio#show'

@@ -9,8 +9,9 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'twilio-ruby'
-
-# Bundle edge Rails instead:
+gem "better_errors", "~> 0.9.0", :group => :development
+gem 'pry-rails'
+gem 'cancan'# Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
@@ -26,13 +27,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem "jquery-rails", "2.3.0"
 
 group :test, :development do
   gem 'factory_girl_rails', "~> 4.0"
   gem 'rspec-rails'
   gem 'forward'
   gem 'fabrication'
+  gem "fakeweb", "~> 1.3"
+  gem 'database_cleaner'
 end
 
 group :test do
@@ -43,7 +46,7 @@ group :test do
   gem 'rr'
   gem 'sms-spec'
   gem 'capybara', '1.1.3'
-  gem 'pry-rails'
+
 end
 
 

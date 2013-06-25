@@ -2,17 +2,23 @@ class PricesController < ApplicationController
 
   before_filter :lookup_price
   
+  respond_to :json, :html
+
   def new
     @commodity = Commodity.find(params[:commodity_id])
     @price = Price.new
   end
   
   def create
+    
     @commodity = Commodity.find(params[:commodity_id])
     @price = @commodity.prices.build(params[:price])
     if @price.save
       flash[:notice] = "Your report has been accepted."
       redirect_to commodity_price_path(@commodity, @price)
+      #respond_with(commodity_price_path(@commodity, @price))
+      #render :json => @commodity, @price
+      
     else
       flash[:error] = "Your report couldn't be posted. #{@price.errors.full_messages.join}"
       render :new
@@ -21,6 +27,7 @@ class PricesController < ApplicationController
   
   def show
     @commodity = Commodity.find(params[:commodity_id])
+    respond_with(@commodity)
   end
   
   def index
