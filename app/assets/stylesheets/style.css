@@ -331,7 +331,7 @@ border-radius: 3px 3px 3px 3px; -moz-border-radius: 3px 3px 3px 3px; -webkit-bor
 
 /* Black Button
 ==========================*/
-.button.black { border: 1px solid #464646; background-image: linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -o-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -moz-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -webkit-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -ms-linear-gradient(bottom, #464646 0%, #656565 100%); background-color: #464646; color:#fff; text-shadow: 1px -1px 0px #444; filter: dropshadow(color=#4444444, offx=1, offy=1); }
+.button.black { border: 1px solid #464646; background-image: linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -o-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -moz-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -webkit-linear-gradient(bottom, #464646 0%, #656565 100%); background-image: -ms-linear-gradient(bottom, #464646 0%, #656565 100%); background-color: #464646; color:#fff; text-shadow: 1px -1px 0px #444; filter: dropshadow(color=#444444, offx=1, offy=1); }
 
 .button.black:hover { background: #535353; }
 
