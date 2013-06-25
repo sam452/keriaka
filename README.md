@@ -13,3 +13,10 @@ A farmer can make a SMS request to the app with the commodity name and receive t
 latest prices recorded. The farmer can then make the decision to sell and to which buyer.
 This is so they are informed and not subject to the whims of the first buyer they find.
 
+API for phone users
+-------------------
+
+A user can use the api to GET five most recent prices for a commodity in the form of 
+/api/commodities/:commodity_id/prices
+POST capability coming soon.
+
