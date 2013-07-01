@@ -9,7 +9,6 @@
   <%= f.text_field :quality %>
   <%= f.label :buyer %>
   <%= f.text_field :buyer %>
-  <%= f.hidden_field :date, :value => Time.now %>
   <%= f.hidden_field :commodity_id, :value => @commodity.id %>
   <%= f.submit %>
 <%- end %>

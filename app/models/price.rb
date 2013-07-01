@@ -6,6 +6,10 @@ class Price < ActiveRecord::Base
   
   validates :price, presence: true
 
+  def date
+  	created_at
+  end
+
   def as_json(options)
   	{price: price, quality: quality, date: date}
   end

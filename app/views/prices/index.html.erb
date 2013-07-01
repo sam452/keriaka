@@ -7,7 +7,7 @@
     <td><%= post.price %></td>
     <td><%= post.quality %></td>
     <td><%= post.buyer %></td>
-    <td><%= post.date.try(:strftime,'%m/%d/%Y') %></td>
+    <td><%= post.created_at.try(:strftime,'%m/%d/%Y') %></td>
   </tr>
 <% end %>
   </table>
