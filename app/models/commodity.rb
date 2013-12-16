@@ -1,7 +1,7 @@
 require_relative 'commodity_name_validator'
 
 class Commodity < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :prices_attributes
   has_many :prices
   accepts_nested_attributes_for :prices
   

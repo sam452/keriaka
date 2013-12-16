@@ -7,10 +7,16 @@ Keriaka::Application.routes.draw do
   end
 
   namespace :api, defaults: {format: 'json'} do
-    resources :commodities, only: [:show, :new, :create] do
-      resources :prices
+    namespace :v1 do
+      resources :commodities, only: [:show, :new, :create, :update] do
+        resources :prices
+      end
     end
   end
+
+  put 'api/commodities/:id', to: 'api/commodities#update'
+
+  #put 'approve_class_room/:id(.:format)', :to => 'class_room_member_ships#approve'
   
   #resources :responses, only: [:show]
   match '/incoming_twilio' => 'incoming_twilio#show'

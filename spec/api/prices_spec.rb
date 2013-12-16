@@ -19,7 +19,7 @@ describe PricesController do
 									date: @this_time
 								}].to_json
 
-				get "api/commodities/#{corn.id}/prices/"
+				get "api/v1/commodities/#{corn.id}/prices/"
 				response.body.should == @expected
 			end
 

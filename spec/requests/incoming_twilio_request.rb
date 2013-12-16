@@ -55,7 +55,7 @@ describe "incoming_twilio" do
 	
   end
   
-  context "no corn commidity" do
+  context "no corn commodity" do
   
   	it "should reply with twilio sms syntax that no commidity found" do
   	  subject
