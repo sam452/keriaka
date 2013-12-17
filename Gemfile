@@ -11,8 +11,7 @@ gem "twitter-bootstrap-rails"
 gem 'twilio-ruby'
 gem "better_errors", "~> 0.9.0", :group => :development
 gem 'pry-rails'
-gem 'cancan'# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'cancan'
 
 
 # Gems used only for assets and not required

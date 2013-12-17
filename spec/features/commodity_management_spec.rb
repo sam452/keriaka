@@ -2,27 +2,28 @@ require 'spec_helper'
 
 feature "commodity management" do
 
-	context "user not logged in" do
+	scenario "user not logged in" do
+		click_link 'Sign Out'
+		visit "commodities/new"
+			  
+			  expect(page).to have_content 'You need to sign in or sign up before continuing.'
 
-	  it "will not see commodities/new" do
-	    visit "commodities/new" do
-			  save_and_open_page
-			  expect(page).to have_text("you are not authorized.")
-      end
 	  end
+ 
 
-	end
+	    background do
+		    visit root_path
+		    expect{
+		    	click_link 'Sign Up'
+		    	fill_in 'Email', with: 'newuser@example.com'
+		    	fill_in "Password", with: 'secret123'
+		    	fill_in 'Password confirmation', with: 'secret123'
+		    	click_button 'Sign up'
+		    	}.to change(User, :count).by(1)
+		  end
 
-	context "user logged in" do
-
-	    before (:each) do
-		    @user = Fabricate(:user)
-		    sign_in @user
-
-		    it "creates a commodity" do
-		    	
+		scenario "logged-in user creates a commodity" do
+			
 		    end
-			end
-	end
 
 end

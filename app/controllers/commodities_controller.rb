@@ -1,6 +1,7 @@
 class CommoditiesController < ApplicationController
 
   before_filter :lookup_commodity
+  before_filter :authenticate_user!, except: [:index, :show]
   
   def index
     @commodities = Commodity.all
