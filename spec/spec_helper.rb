@@ -40,7 +40,8 @@ RSpec.configure do |config|
   #   FakeWeb.clean_registry
   # end
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
   end
   config.before(:each) do
     DatabaseCleaner.start
