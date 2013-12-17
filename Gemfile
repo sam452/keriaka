@@ -44,7 +44,7 @@ group :test do
   gem 'shoulda'
   gem 'rr'
   gem 'sms-spec'
-  gem 'capybara', '1.1.3'
+  gem 'capybara' #, '1.1.3'
 
 end
 

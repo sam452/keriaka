@@ -23,7 +23,7 @@ describe PricesController do
 				response.body.should == @expected
 			end
 
-			it "POST price" do
+			it "POST a price" do
 			end
 		end
 

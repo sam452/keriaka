@@ -16,8 +16,10 @@ module Api
 
 			def create
 				commodity = Commodity.find(params[:commodity_id])
-
-		    respond_with :api, :commodity, commodity.prices.build(params[:commodity][:prices_attributes][0])
+				price = commodity.prices.build(params[:price])
+#respond_with Product.create(params[:product])
+		    respond_with commodity.prices.build(params[:price])
+		    #respond_with :api, :commodity, commodity.prices.build(params[:commodity][:prices_attributes][0])
 
 		    #render json: price.to_json
 			end
