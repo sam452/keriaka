@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'pg'
 gem 'bourbon'
-gem 'devise'
+gem 'devise', '3.1.1'
 gem "brakeman", "~> 1.8.2"
 gem "therubyracer"
 gem "less-rails"

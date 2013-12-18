@@ -17,6 +17,9 @@ API for phone users
 -------------------
 
 A user can use the api to GET five most recent prices for a commodity in the form of 
-/api/commodities/:commodity_id/prices
-POST capability coming soon.
+/api/V1/commodities/:commodity_id/prices
+
+To POST a price, you must get a token.
+
+curl -d "email=you@example.com" -d "password=mypw" http://localhost:3001/api/v1/tokens
 

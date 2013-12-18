@@ -2,15 +2,6 @@ require 'spec_helper'
 
 feature "commodity management" do
 
-	scenario "user not logged in" do
-		click_link 'Sign Out'
-		visit "commodities/new"
-			  
-			  expect(page).to have_content 'You need to sign in or sign up before continuing.'
-
-	  end
- 
-
 	    background do
 		    visit root_path
 		    expect{
@@ -22,8 +13,19 @@ feature "commodity management" do
 		    	}.to change(User, :count).by(1)
 		  end
 
+		scenario "user not logged in" do
+			click_link 'Sign Out'
+			visit "commodities/new"
+			  
+			expect(page).to have_content 'You need to sign in or sign up before continuing.'
+
+	  end
+ 
+
+
+
 		scenario "logged-in user creates a commodity" do
 			
-		    end
+		end
 
 end

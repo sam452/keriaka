@@ -12,4 +12,6 @@ describe "sends a list of prices" do
 		subject
 		response.code.should == "200"
 	end
+
+	
 end
